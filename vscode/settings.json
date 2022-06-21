@@ -1,0 +1,93 @@
+{
+    // Workbench
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.labelFormat": "short",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.untitled.hint": "hidden",
+    
+    // Editor settings
+    "editor.wordWrap": "on",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 20,
+    "terminal.integrated.fontSize": 16,
+    "editor.tabSize": 2,
+    "editor.fontFamily": "JetBrainsMonoMedium Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.renderLineHighlight": "gutter",
+    "editor.rulers": [140, 140],
+    "editor.parameterHints.enabled": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+      
+    // VSCode stuff
+    "breadcrumbs.enabled": true,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    
+    // Emmet
+    "emmet.syntaxProfiles": { "javascript": "jsx" },
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    
+    // Extensions
+    "extensions.ignoreRecommendations": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "material-icon-theme.folders.associations": {
+      "domain": "core",
+      "infra": "app",
+      "main": "public",
+      "presentation": "connection",
+      "cryptography": "secure",
+      "entities": "class",
+      "repositories": "mappings",
+      "protocols": "resource",
+      "useCases": "components",
+      "subcomponents": "components",
+      "adapters": "connection",
+      "factories": "container",
+      "globals": "global",
+      "ui": "views"
+    },
+    "material-icon-theme.files.associations": {
+      "ormconfig.json": "database",
+      "tsconfig.json": "tune",
+      ".lintstagedrc.json": "tune"
+    },
+    "polacode.transparentBackground": true,
+    "polacode.shadow": "none",
+    "gitlens.defaultDateFormat": null,
+    "gitlens.hovers.currentLine.over": "line",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.confirmSync": false,
+    "editor.inlineSuggest.enabled": true,
+    "files.autoSave": "afterDelay",
+    "editor.minimap.enabled": false,
+    "json.schemas": [
+      {
+        "name": "vscode-expo-manifest",
+        "url": "file:///home/carlos/.config/Code/User/globalStorage/bycedric.vscode-expo/manifest-45.0.0.json",
+        "fileMatch": [
+          "app.json",
+          "app.config.json"
+        ]
+      }
+    ],
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Dracula Pro",
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  }
