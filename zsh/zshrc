@@ -107,14 +107,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# My alias
+alias ls="exa --icons"
+alias cat="bat --style=auto"
+alias jn="jupyter notebook"
+
 # asdf config
 . $HOME/.asdf/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
-
-# My alias
-alias ls="exa --icons"
-alias cat="bat --style=auto"
 
