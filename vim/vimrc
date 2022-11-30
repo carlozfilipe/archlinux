@@ -1,0 +1,8 @@
+set number
+set title
+set mouse=a
+set incsearch
+set expandtab tabstop=2 shiftwidth=2
+packadd! dracula
+syntax enable
+colorscheme dracula
