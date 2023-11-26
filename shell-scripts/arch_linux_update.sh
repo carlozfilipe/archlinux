@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# Atualiza os repositórios
-sudo pacman -Sy
-
-# Atualiza todos os pacotes do sistema
-sudo pacman -Su --noconfirm
-
-#Atualiza os pacotes do AUR
+#Atualiza os pacotes do AUR e oficiais
 yay -Syu --noconfirm
 
 # Remove pacotes órfãos (não necessários)
-sudo pacman -Rns --noconfirm $(pacman -Qdtq)
+sudo pacman -Rns $(pacman -Qdtq) --noconfirm
 
 # Limpa o cache do pacman para liberar espaço em disco
 sudo pacman -Sc --noconfirm
