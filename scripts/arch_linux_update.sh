@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#Atualiza os pacotes do AUR e oficiais
+# Atualiza os pacotes oficiais
+sudo pacman -Syu --noconfirm
+
+# Atualiza os pacotes do AUR
 yay -Syu --noconfirm
 
 # Remove pacotes órfãos (não necessários)
