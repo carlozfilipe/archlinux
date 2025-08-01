@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Encerra o script se algum comando falhar
+set -e  # Encerra se algum comando falhar
 
 # Instala pacotes base para o yay
 sudo pacman -S --needed git base-devel --noconfirm
@@ -14,7 +14,7 @@ if ! command -v yay &> /dev/null; then
   rm -rf yay
 fi
 
-# Instala Google Chrome (estável)
+# Instala Google Chrome
 yay -S google-chrome --noconfirm
 
 # Instala ZSH e complementos
@@ -23,45 +23,34 @@ yay -S zsh zsh-completions --noconfirm
 # Define o ZSH como shell padrão
 chsh -s /bin/zsh
 
-# Instala Oh My Zsh, se ainda não estiver instalado
+# Instala Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "Instalando Oh My Zsh..."
   RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-# Instala o tema Spaceship
+# Tema Spaceship
 THEME_DIR="$HOME/.oh-my-zsh/custom/themes/spaceship-prompt"
 if [ ! -d "$THEME_DIR" ]; then
   git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$THEME_DIR" --depth=1
   ln -sf "$THEME_DIR/spaceship.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 fi
 
-# Instala plugins: syntax-highlighting
+# Plugins
 PLUGIN_SYNTAX="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-if [ ! -d "$PLUGIN_SYNTAX" ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$PLUGIN_SYNTAX"
-fi
+[ ! -d "$PLUGIN_SYNTAX" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$PLUGIN_SYNTAX"
 
-# Instala plugins: autosuggestions
 PLUGIN_AUTOSUGGEST="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-if [ ! -d "$PLUGIN_AUTOSUGGEST" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions "$PLUGIN_AUTOSUGGEST"
-fi
+[ ! -d "$PLUGIN_AUTOSUGGEST" ] && git clone https://github.com/zsh-users/zsh-autosuggestions "$PLUGIN_AUTOSUGGEST"
 
 # Cria .zshrc se não existir
-if [ ! -f "$HOME/.zshrc" ]; then
-  cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" "$HOME/.zshrc"
-fi
+[ ! -f "$HOME/.zshrc" ] && cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" "$HOME/.zshrc"
 
-# Define o tema spaceship no .zshrc
+# Aplica tema e plugins
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="spaceship"/' "$HOME/.zshrc"
-
-# Adiciona plugins ao .zshrc
 sed -i 's/^plugins=(.*)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' "$HOME/.zshrc"
 
-# Adiciona manualmente o source do syntax-highlighting ao final (obrigatório)
+# Source manual obrigatório para syntax-highlighting
 grep -qxF 'source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' "$HOME/.zshrc" || echo 'source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> "$HOME/.zshrc"
 
-echo -e "\n✅ ZSH, Oh My Zsh, tema Spaceship e plugins instalados e configurados!"
-echo "🌐 Google Chrome instalado com sucesso!"
-echo "🔁 Reinicie o terminal ou digite 'zsh' para começar a usar."
+echo -e "\n✅ Tudo instalado e configurado!"
+echo "⚠️ Reinicie o terminal ou execute 'zsh' para começar a usar."
