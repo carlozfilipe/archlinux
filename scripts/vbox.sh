@@ -14,8 +14,8 @@ if ! command -v yay &> /dev/null; then
   rm -rf yay
 fi
 
-# Instala Brave
-yay -S brave-bin --noconfirm
+# Instala Google Chrome (estável)
+yay -S google-chrome --noconfirm
 
 # Instala ZSH e complementos
 yay -S zsh zsh-completions --noconfirm
@@ -63,4 +63,5 @@ sed -i 's/^plugins=(.*)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions
 grep -qxF 'source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' "$HOME/.zshrc" || echo 'source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> "$HOME/.zshrc"
 
 echo -e "\n✅ ZSH, Oh My Zsh, tema Spaceship e plugins instalados e configurados!"
+echo "🌐 Google Chrome instalado com sucesso!"
 echo "🔁 Reinicie o terminal ou digite 'zsh' para começar a usar."
