@@ -16,7 +16,7 @@ git add .
 echo "-------------------------------------"
 echo "💾 Fazendo o commit das alterações..."
 echo "-------------------------------------"
-git commit -m "Add INFO DADOS PUBLICOS"
+git commit -m "Update 🎉"
 
 # Envia as alterações para o repositório remoto na branch atual
 echo "---------------------------------------------------"
