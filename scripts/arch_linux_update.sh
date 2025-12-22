@@ -1,29 +1,23 @@
 #!/bin/bash
 
-# Atualiza os pacotes oficiais
+# Atualiza pacotes oficiais
 sudo pacman -Syu --noconfirm
 
-# Atualiza os pacotes do AUR
+# Atualiza pacotes do AUR
 yay -Syu --noconfirm
 
-# Verifica se há pacotes órfãos e remove-os, se existirem
+# Remove pacotes órfãos
 orphans=$(pacman -Qdtq)
 if [ -n "$orphans" ]; then
-  sudo pacman -Rns $orphans --noconfirm
+    sudo pacman -Rns $orphans --noconfirm
 else
-  echo "Nenhum pacote órfão encontrado."
+    echo "Nenhum pacote órfão encontrado."
 fi
 
-# Limpa o cache do pacman para liberar espaço em disco
-sudo pacman -Sc --noconfirm
+# Limpa cache do pacman (mantém 1 versão antiga)
+sudo paccache -rk1
 
-# Limpa o cache de pacotes que não estão instalados
-sudo paccache -ruk0
-
-# Limpa o cache
-rm -rf ~/.cache
-
-# Atualiza a base de dados do Pacman
+# Atualiza base de dados do locate
 sudo updatedb
 
 echo "Atualização concluída."
