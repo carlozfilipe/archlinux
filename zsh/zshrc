@@ -147,7 +147,6 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-
 # My alias
 alias ls="eza --icons"
 alias cat="bat --style=auto"
@@ -159,4 +158,7 @@ alias baixaki="bash /home/carlos/www/archlinux/scripts/baixaki.sh"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-
+# Git pull current branch
+function gpull() {
+    git pull origin $(git branch --show-current)
+}
