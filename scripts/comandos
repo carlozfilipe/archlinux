@@ -1,0 +1,5 @@
+// Atualizar a mirrorlist do Brasil
+sudo reflector --verbose --country 'Brazil' -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+// Criar ponto de Wi-Fi
+nmcli device wifi hotspot ifname wlan0 ssid ARCH_LINUX_CF password flamengo
