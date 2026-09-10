@@ -76,13 +76,6 @@ plugins=(
 	zsh-autosuggestions
 )
 
-# zsh-completions
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-autoload -U compinit && compinit
-source "$ZSH/oh-my-zsh.sh"
-
-# User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -156,3 +149,6 @@ alias baixaki="bash /home/carlos/www/archlinux/scripts/baixaki.sh"
 # nvm config
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# load oh-my-zsh
+source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
