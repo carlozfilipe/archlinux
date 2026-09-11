@@ -143,7 +143,6 @@ SPACESHIP_PROMPT_ORDER=(
 alias ls="eza --icons"
 alias cat="bat --style=auto"
 alias update="bash /home/carlos/www/archlinux/scripts/arch_linux_update.sh"
-alias grelease="bash /home/carlos/www/archlinux/scripts/git_release.sh"
 alias baixaki="bash /home/carlos/www/archlinux/scripts/baixaki.sh"
 
 # nvm config
